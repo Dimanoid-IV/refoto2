@@ -2,41 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Photo Restoration Design System - Warm, timeless, austere */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Primary warm sepia palette */
+    --background: 42 15% 97%;
+    --foreground: 25 8% 20%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 12% 95%;
+    --card-foreground: 25 8% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 12% 95%;
+    --popover-foreground: 25 8% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Rich sepia browns */
+    --primary: 25 35% 25%;
+    --primary-foreground: 42 15% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Warm secondary tones */
+    --secondary: 35 20% 88%;
+    --secondary-foreground: 25 8% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted warm grays */
+    --muted: 35 15% 92%;
+    --muted-foreground: 25 8% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Elegant accent */
+    --accent: 32 28% 82%;
+    --accent-foreground: 25 8% 20%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 42 15% 97%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 15% 85%;
+    --input: 35 15% 88%;
+    --ring: 25 35% 25%;
 
-    --radius: 0.5rem;
+    /* Custom restoration theme colors */
+    --sepia-light: 42 35% 85%;
+    --sepia-medium: 32 28% 65%;
+    --sepia-dark: 25 35% 35%;
+    --vintage-cream: 45 25% 94%;
+    --restoration-gold: 38 45% 75%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--vintage-cream)), hsl(var(--sepia-light)));
+    --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(var(--sepia-light) / 0.3));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(var(--sepia-medium) / 0.15);
+    --shadow-photo: 0 8px 30px hsl(var(--sepia-dark) / 0.25);
+
+    --radius: 0.375rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +118,45 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* Custom restoration theme utilities */
+@layer utilities {
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-photo {
+    box-shadow: var(--shadow-photo);
+  }
+  
+  .text-sepia-dark {
+    color: hsl(var(--sepia-dark));
+  }
+  
+  .text-sepia-medium {
+    color: hsl(var(--sepia-medium));
+  }
+  
+  .bg-sepia-light {
+    background-color: hsl(var(--sepia-light));
+  }
+  
+  .bg-vintage-cream {
+    background-color: hsl(var(--vintage-cream));
+  }
+  
+  .border-sepia-light {
+    border-color: hsl(var(--sepia-light));
   }
 }
